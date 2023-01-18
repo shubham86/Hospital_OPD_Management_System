@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterCP.master.cs" Inherits="Hospital_Reception.cpanel.MasterCP" %>
+
+<!DOCTYPE html>
+
+<html class="no-js ">
+<head runat="server">
+    <title></title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="icon" href="../image/favicon.png" type="image/x-icon">
+    <!-- Favicon-->
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link href="../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+    <link href="../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/color_skins.css">
+    <!-- JQuery DataTable Css -->
+    <link rel="stylesheet" href="../plugins/jquery-datatable/dataTables.bootstrap4.min.css">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        .colorblue {
+            color:#00cfd1;
+        }
+
+        @media only screen and (min-width : 1024px) {
+            
+        }
+
+        @media only screen and (min-device-width : 480px) and (max-device-width : 1024px) {
+            .img-logo {
+                padding-top:15px;
+            }
+        }
+
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+            .img-logo {
+                padding-top:15px;
+            }
+            .mobile-hide {
+                display:none;
+            }            
+        }      
+    </style>
+</head>
+<body class="theme-cyan">
+    <form id="form1" runat="server" autocomplete="off">
+        <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30">
+                <img class="zmdi-hc-spin" src="../images/logo.png" width="48" height="48" alt="Dr. Kamble's Clinic"></div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- Top Bar -->
+    <nav class="navbar p-l-5 p-r-5">
+        <ul class="nav navbar-nav navbar-left">
+            <li class="img-logo">
+                <div class="navbar-header">
+                    <a href="javascript:void(0);" class="bars"></a>
+                    <a class="navbar-brand" href="Dashboard.aspx">
+                        <img src="../images/logo.png" width="30" alt="Dr. Kamble's Clinic"><span class="m-l-10">Dr. Kamble's fertility Clinic</span></a>
+                </div>
+            </li>
+            <li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a></li>            
+            <li class="float-right">                
+                <a href="Logout.aspx" class="mega-menu" data-close="true" title="Log-Out" onclick="return confirm('Are You Sure You Want To Logout?')"><i class="zmdi zmdi-power"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar">
+        <div class="tab-content">
+            <div class="tab-pane stretchRight active" id="dashboard">
+                <div class="menu">
+                    <ul class="list">
+                        <li>
+                            <div class="user-info">
+                                <div class="image" style="margin-top:10px">
+                                    <img id="img1" src="../images/profile_av.jpg" alt="User" runat="server" visible="false">
+                                    <i id="img2" class="zmdi zmdi-account" runat="server" visible="false" style="font-size:66px"></i>
+                                </div>
+                                <div class="detail">
+                                    <h4><asp:Label ID="lblAdminName" runat="server"></asp:Label></h4>
+                                    <small><asp:Label ID="lblRole" runat="server"></asp:Label></small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header">MAIN</li>
+                        <li id="dash"><a href="Dashboard.aspx"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                        <li id="admin" runat="server" visible="false"><a href="ManageAdmin.aspx"><i class="zmdi zmdi-account-add"></i><span>Manage Admin</span> </a></li>  
+
+                          <li id="master" runat="server" visible="false"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Master Entry</span> </a>
+                            <ul class="ml-menu">
+                                <li><a id="medicinesentry" runat="server" href="MedicinesEntry.aspx">Medicines Entry</a></li>
+                                <li><a id="diagnosisentry" runat="server" href="DiagnosisEntry.aspx">Diagnosis Entry</a></li>
+                                <li><a id="adviceentry" runat="server" href="AdviceEntry.aspx">Advice Entry</a></li>
+                                <li  id="Li1" runat="server" visible="false" style="padding-bottom:0px"><a href="OurPatient.aspx">Our Patients</a></li>
+                            </ul>
+                        </li>
+
+                        <li id="holiday" runat="server" visible="false"><a href="TimeBooking.aspx"><i class="zmdi zmdi-close-circle"></i><span>Declare Holiday</span> </a></li>  
+                        <li id="appo"><a href="BookAppointment.aspx"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a></li>                        
+                        <li id="patient" ><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
+                            <ul class="ml-menu">
+                                <li><a id="oneday" href="OneDayList.aspx">Todays Patients</a></li>
+                                <li  id="ourPatient" runat="server" visible="false" style="padding-bottom:0px"><a href="OurPatient.aspx">Our Patients</a></li>
+                                <li  id="oldPatient" runat="server" visible="false" style="padding-bottom:0px"><a href="OldPatientList.aspx">Old Patients List</a></li>
+                            </ul>
+                        </li>
+                        <li class="header">EXTRA COMPONENTS</li>
+                        <li id="dispaly"><a href="DisplayScreen.aspx" target="_blank"><i class="zmdi zmdi-desktop-windows"></i><span>Display Screen</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer" style="text-align:center">
+                    <span style="font-size:12px;">Developed by <a href="http://www.jericotechnologies.in" target="_blank" style="color:#00abad;font-weight:bold">Jerico Tchnologies</a></span>
+                </div>
+            </div>            
+        </div>
+    </aside>
+    
+    
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    
+    <!-- Bootstrap JS and jQuery v3.2.1 -->
+    <script src="assets/bundles/vendorscripts.bundle.js"></script>
+    <!-- slimscroll, waves Scripts Plugin Js -->
+    <script>    $.fn.selectpicker.Constructor.DEFAULTS.iconBase = 'zmdi';
+        $.fn.selectpicker.Constructor.DEFAULTS.tickIcon = 'zmdi-check';</script>
+    <script src="../plugins/momentjs/moment.js"></script>
+    <!-- Moment Plugin Js -->
+    <script src="../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <!-- Jquery DataTable Plugin Js --> 
+    <script src="assets/bundles/datatablescripts.bundle.js"></script>
+    <script src="assets/js/pages/tables/jquery-datatable.js"></script>
+
+    <script src="assets/bundles/mainscripts.bundle.js"></script>
+    <!-- Custom Js -->
+    <script>
+        $(function () {
+            //Datetimepicker plugin
+            $('.datetimepicker').bootstrapMaterialDatePicker({
+                format: 'dddd DD MMMM YYYY - HH:mm',
+                clearButton: true,
+                weekStart: 1
+            });
+        });
+    </script>        
+    </form>
+</body>
+</html>

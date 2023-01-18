@@ -1,0 +1,440 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26D181EE-E7B6-4305-8642-2483FA7C7B51}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hospital_Reception</RootNamespace>
+    <AssemblyName>Hospital_Reception</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WIHO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\WIHO.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cpanel\AdviceEntry.aspx" />
+    <Content Include="cpanel\assets\bell.wav" />
+    <Content Include="cpanel\assets\bundles\datatablescripts.bundle.js" />
+    <Content Include="cpanel\assets\bundles\libscripts.bundle.js" />
+    <Content Include="cpanel\assets\bundles\mainscripts.bundle.js" />
+    <Content Include="cpanel\assets\bundles\vendorscripts.bundle.js" />
+    <Content Include="cpanel\assets\css\authentication.css" />
+    <Content Include="cpanel\assets\css\color_skins.css" />
+    <Content Include="cpanel\assets\css\main.css" />
+    <Content Include="cpanel\assets\js\jquery-1.10.0.min.js" />
+    <Content Include="cpanel\assets\js\jquery-ui.min.js" />
+    <Content Include="cpanel\assets\js\pages\blog\blog.js" />
+    <Content Include="cpanel\assets\js\pages\calendar\calendar.js" />
+    <Content Include="cpanel\assets\js\pages\cards\basic.js" />
+    <Content Include="cpanel\assets\js\pages\file\filemanager.js" />
+    <Content Include="cpanel\assets\js\pages\forms\editors.js" />
+    <Content Include="cpanel\assets\js\pages\index.js" />
+    <Content Include="cpanel\assets\js\pages\medias\image-gallery.js" />
+    <Content Include="cpanel\assets\js\pages\rtl.js" />
+    <Content Include="cpanel\assets\js\pages\tables\jquery-datatable.js" />
+    <Content Include="cpanel\assets\js\pages\ui\dialogs.js" />
+    <Content Include="cpanel\assets\js\pages\ui\notifications.js" />
+    <Content Include="cpanel\assets\js\pages\ui\range-sliders.js" />
+    <Content Include="cpanel\assets\js\pages\ui\sortable-nestable.js" />
+    <Content Include="cpanel\assets\js\pages\widgets\infobox\infobox-1.js" />
+    <Content Include="cpanel\BookAppointment.aspx" />
+    <Content Include="cpanel\Dashboard.aspx" />
+    <Content Include="cpanel\DiagnosisEntry.aspx" />
+    <Content Include="cpanel\DisplayScreen.aspx" />
+    <Content Include="cpanel\favicon.ico" />
+    <Content Include="cpanel\Login.aspx" />
+    <Content Include="cpanel\Logout.aspx" />
+    <Content Include="cpanel\ManageAdmin.aspx" />
+    <Content Include="cpanel\MedicinesEntry.aspx" />
+    <Content Include="cpanel\OldPatientList.aspx" />
+    <Content Include="cpanel\OneDayList.aspx" />
+    <Content Include="cpanel\OurPatient.aspx" />
+    <Content Include="cpanel\PatientHistory.aspx" />
+    <Content Include="cpanel\patientprescription.aspx" />
+    <Content Include="cpanel\TimeBooking.aspx" />
+    <Content Include="cpanel\WebForm2.aspx" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\default-template-style.css" />
+    <Content Include="css\divineartnav-animate.css" />
+    <Content Include="css\divineartnav-style.css" />
+    <Content Include="css\divineartnav.css" />
+    <Content Include="css\secondary_css.css" />
+    <Content Include="css\style.css" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\crossIcon.png" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\female.png" />
+    <Content Include="images\image1.jpg" />
+    <Content Include="images\image2.jpg" />
+    <Content Include="images\image3.jpg" />
+    <Content Include="images\image4.jpg" />
+    <Content Include="images\image5.jpg" />
+    <Content Include="images\image6.jpg" />
+    <Content Include="images\image7.jpg" />
+    <Content Include="images\image8.jpg" />
+    <Content Include="images\login.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\male.png" />
+    <Content Include="images\profile_av.jpg" />
+    <Content Include="images\tickIcon.png" />
+    <Content Include="image\appointment-bg.jpg" />
+    <Content Include="image\avtar-1.png" />
+    <Content Include="image\avtar-2.png" />
+    <Content Include="image\avtar-3.png" />
+    <Content Include="image\bg-counter.jpg" />
+    <Content Include="image\blog-01.jpg" />
+    <Content Include="image\blog-02.jpg" />
+    <Content Include="image\blog-03.jpg" />
+    <Content Include="image\blog-04.jpg" />
+    <Content Include="image\cert.jpg" />
+    <Content Include="image\CREDIT-CARD.png" />
+    <Content Include="image\footer-bg.jpg" />
+    <Content Include="image\gallary\1.jpg" />
+    <Content Include="image\gallary\10.jpg" />
+    <Content Include="image\gallary\11.jpg" />
+    <Content Include="image\gallary\12.png" />
+    <Content Include="image\gallary\2.jpg" />
+    <Content Include="image\gallary\3.jpg" />
+    <Content Include="image\gallary\4.jpg" />
+    <Content Include="image\gallary\5.jpg" />
+    <Content Include="image\gallary\6.jpg" />
+    <Content Include="image\gallary\7.jpg" />
+    <Content Include="image\gallary\8.jpg" />
+    <Content Include="image\gallary\9.jpg" />
+    <Content Include="image\gallary\cert.jpg" />
+    <Content Include="image\img-3.jpg" />
+    <Content Include="image\ISO.png" />
+    <Content Include="image\logo-1.png" />
+    <Content Include="image\logo-2.png" />
+    <Content Include="image\favicon.png" />
+    <Content Include="image\p1.png" />
+    <Content Include="image\p2.png" />
+    <Content Include="image\Preloader_6.gif" />
+    <Content Include="image\Preloader_6.png" />
+    <Content Include="image\PSRLI.png" />
+    <Content Include="image\slider-1.jpg" />
+    <Content Include="image\slider-2.jpg" />
+    <Content Include="image\team-1.png" />
+    <Content Include="image\team-2.png" />
+    <Content Include="image\team-3.png" />
+    <Content Include="Index.aspx" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\divineartnav.js" />
+    <Content Include="js\ie-emulation-modes-warning.js" />
+    <Content Include="js\ie10-viewport-bug-workaround.js" />
+    <Content Include="js\template-demo.js" />
+    <Content Include="js\wow.js" />
+    <Content Include="plugins\bootstrap-material-datetimepicker\css\bootstrap-material-datetimepicker.css" />
+    <Content Include="plugins\bootstrap-material-datetimepicker\js\bootstrap-material-datetimepicker.js" />
+    <Content Include="plugins\bootstrap-select\css\bootstrap-select.css" />
+    <Content Include="plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="plugins\jquery-datatable\dataTables.bootstrap4.min.css" />
+    <Content Include="plugins\momentjs\moment.js" />
+    <Content Include="Global.asax" />
+    <Content Include="vendor\bootstrap-datepicker\css\datepicker.min.css" />
+    <Content Include="vendor\bootstrap-datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont5b62.svg" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\revolution-slider\revolution-addons\particles\css\revolution.addon.particles4bf4.css" />
+    <Content Include="vendor\revolution-slider\revolution-addons\particles\js\revolution.addon.particles.min4bf4.js" />
+    <Content Include="vendor\revolution-slider\revolution\assets\coloredbg.png" />
+    <Content Include="vendor\revolution-slider\revolution\assets\gridtile.png" />
+    <Content Include="vendor\revolution-slider\revolution\assets\gridtile_3x3.png" />
+    <Content Include="vendor\revolution-slider\revolution\assets\gridtile_3x3_white.png" />
+    <Content Include="vendor\revolution-slider\revolution\assets\gridtile_white.png" />
+    <Content Include="vendor\revolution-slider\revolution\assets\loader.gif" />
+    <Content Include="vendor\revolution-slider\revolution\css\layers.css" />
+    <Content Include="vendor\revolution-slider\revolution\css\navigation.css" />
+    <Content Include="vendor\revolution-slider\revolution\css\settings.css" />
+    <Content Include="vendor\revolution-slider\revolution\fonts\revicons\revicons90c6.svg" />
+    <Content Include="vendor\revolution-slider\revolution\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="vendor\revolution-slider\revolution\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="vendor\revolution-slider\revolution\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="vendor\revolution-slider\revolution\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="vendor\revolution-slider\revolution\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="vendor\revolution-slider\revolution\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="vendor\revolution-slider\revolution\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="vendor\revolution-slider\revolution\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="vendor\revolution-slider\revolution\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="vendor\revolution-slider\revolution\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="vendor\revolution-slider\revolution\js\jquery.themepunch.tools.min.js" />
+    <Content Include="vendor\themify-icons\fonts\themify9f24.svg" />
+    <Content Include="vendor\themify-icons\themify-icons.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cpanel\AdviceEntry.aspx.cs">
+      <DependentUpon>AdviceEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\AdviceEntry.aspx.designer.cs">
+      <DependentUpon>AdviceEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\BookAppointment.aspx.cs">
+      <DependentUpon>BookAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\BookAppointment.aspx.designer.cs">
+      <DependentUpon>BookAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\DiagnosisEntry.aspx.cs">
+      <DependentUpon>DiagnosisEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\DiagnosisEntry.aspx.designer.cs">
+      <DependentUpon>DiagnosisEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\DisplayScreen.aspx.cs">
+      <DependentUpon>DisplayScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\DisplayScreen.aspx.designer.cs">
+      <DependentUpon>DisplayScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\ManageAdmin.aspx.cs">
+      <DependentUpon>ManageAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\ManageAdmin.aspx.designer.cs">
+      <DependentUpon>ManageAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\MasterCP.Master.cs">
+      <DependentUpon>MasterCP.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\MasterCP.Master.designer.cs">
+      <DependentUpon>MasterCP.Master</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\MedicinesEntry.aspx.cs">
+      <DependentUpon>MedicinesEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\MedicinesEntry.aspx.designer.cs">
+      <DependentUpon>MedicinesEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\OldPatientList.aspx.cs">
+      <DependentUpon>OldPatientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\OldPatientList.aspx.designer.cs">
+      <DependentUpon>OldPatientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\OneDayList.aspx.cs">
+      <DependentUpon>OneDayList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\OneDayList.aspx.designer.cs">
+      <DependentUpon>OneDayList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\OurPatient.aspx.cs">
+      <DependentUpon>OurPatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\OurPatient.aspx.designer.cs">
+      <DependentUpon>OurPatient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\PatientHistory.aspx.cs">
+      <DependentUpon>PatientHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\PatientHistory.aspx.designer.cs">
+      <DependentUpon>PatientHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\patientprescription.aspx.cs">
+      <DependentUpon>patientprescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\patientprescription.aspx.designer.cs">
+      <DependentUpon>patientprescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\TimeBooking.aspx.cs">
+      <DependentUpon>TimeBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\TimeBooking.aspx.designer.cs">
+      <DependentUpon>TimeBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cpanel\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cpanel\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cpanel\MasterCP.Master" />
+    <Content Include="cpanel\assets\fonts\Material-Design-Iconic-Fontd1f1.ttf" />
+    <Content Include="cpanel\assets\fonts\Material-Design-Iconic-Fontd1f1.woff" />
+    <Content Include="cpanel\assets\fonts\Material-Design-Iconic-Fontd1f1.woff2" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont5b62.eot" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont5b62.ttf" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont5b62.woff" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont5b62.woff2" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="vendor\revolution-slider\revolution\fonts\revicons\revicons90c6.eot" />
+    <Content Include="vendor\revolution-slider\revolution\fonts\revicons\revicons90c6.ttf" />
+    <Content Include="vendor\revolution-slider\revolution\fonts\revicons\revicons90c6.woff" />
+    <Content Include="vendor\themify-icons\fonts\themify.ttf" />
+    <Content Include="vendor\themify-icons\fonts\themify.woff" />
+    <Content Include="vendor\themify-icons\fonts\themify9f24.eot" />
+    <Content Include="vendor\themify-icons\fonts\themifyd41d.eot" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SpeechLib">
+      <Guid>{C866CA3A-32F7-11D2-9602-00C04F8EE628}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50471</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50471/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
